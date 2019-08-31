@@ -13,8 +13,8 @@ C.Font = {
 }
 
 C.Size = {
-  ["Width"] = 200,                   -- frame width
-  ["Height"] = 50,                  -- frame height
+  ["Width"] = 125,                   -- frame width
+  ["Height"] = 25,                  -- frame height
 }
 
 C.Position = {
