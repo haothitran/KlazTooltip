@@ -1,0 +1,8 @@
+## Interface: 80000
+## Title: Klaz|cff1994ffTooltip|r
+## Author: Klaz
+## Notes: Adjusts the appearance of the default Blizzard tooltip. (/klaztooltip)
+## SavedVariables: KlazTooltipDB
+
+Config.lua
+Tooltip.lua
