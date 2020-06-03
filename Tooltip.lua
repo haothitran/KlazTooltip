@@ -137,7 +137,7 @@ local function UpdateUnit(self)
   end
 
   -- status bar
-  GameTooltipStatusBar:SetHeight(2)
+  GameTooltipStatusBar:SetHeight(4)
   GameTooltipStatusBar:SetStatusBarTexture('Interface\\ChatFrame\\ChatFrameBackground')
   GameTooltipStatusBar:ClearAllPoints()
   GameTooltipStatusBar:SetPoint('LEFT', 1, 0)
@@ -146,6 +146,39 @@ local function UpdateUnit(self)
 
   self:Show()
 end
+
+--------------------------------------------------------------------------------
+-- // HEALTH VALUE IN STATUS BAR
+--------------------------------------------------------------------------------
+
+local formatNumber = function(val)
+  if(val >= 1e6) then
+    return ("%.1fm"):format(val / 1e6)
+  elseif(val >= 1e3) then
+    return ("%.0fk"):format(val / 1e3)
+  else
+    return ("%d"):format(val)
+  end
+end
+
+local function healthValue(self, value)
+  if(not value) then return end
+
+  local min, max = self:GetMinMaxValues()
+  if(value < min) or (value > max) then
+    return
+  end
+
+  if(not self.text) then
+    self.text = self:CreateFontString(nil, "OVERLAY")
+    self.text:SetPoint("CENTER", self, 0, 0)
+    self.text:SetFont(C.Font.Family, C.Font.Size-1, C.Font.Style)
+  end
+
+  local hp = formatNumber(self:GetValue())
+  self.text:SetText(hp)
+end
+GameTooltipStatusBar:HookScript("OnValueChanged", healthValue)
 
 --------------------------------------------------------------------------------
 -- // SKIN
