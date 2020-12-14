@@ -1,4 +1,4 @@
-## Interface: 90001
+## Interface: 90002
 ## Title: Klaz|cff1994ffTooltip|r
 ## Author: Klaz
 ## Notes: Adjusts the appearance of the default Blizzard tooltip. (/klaztooltip)
