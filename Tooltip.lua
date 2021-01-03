@@ -191,17 +191,12 @@ GameTooltipStatusBar:HookScript("OnValueChanged", healthValue)
 -- // SKIN
 --------------------------------------------------------------------------------
 
-for _, tooltip in next, {
-  GameTooltip,
-  WorldMapTooltip,
-} do
-  tooltip:HookScript('OnShow', UpdateStyle)
-  tooltip:HookScript('OnUpdate', UpdateStyle)
-  tooltip:HookScript('OnTooltipSetUnit', UpdateUnit)
+GameTooltip:HookScript('OnShow', UpdateStyle)
+GameTooltip:HookScript('OnUpdate', UpdateStyle)
+GameTooltip:HookScript('OnTooltipSetUnit', UpdateUnit)
 
-  for _, shoppingTooltip in next, tooltip.shoppingTooltips do
-    shoppingTooltip:HookScript('OnTooltipSetItem', UpdateStyle)
-  end
+for _, shoppingTooltip in next, GameTooltip.shoppingTooltips do
+	shoppingTooltip:HookScript('OnTooltipSetItem', UpdateStyle)
 end
 
 --------------------------------------------------------------------------------
