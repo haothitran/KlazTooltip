@@ -4,6 +4,14 @@ A World of Warcraft add-on that adjusts the appearance of the default Blizzard t
 
 Use the command `/klaztooltip` to see some in-game options. All other settings are hard-coded.
 
+## Features
+
+- Moveable anchor position.
+- Class coloured names.
+- Class coloured health statusbar.
+- Add health value of mouseover target in statusbar.
+- Hide crafter's name from crafted items.
+
 ## Installation
 
 1. Backup `World of Warcraft\_retail_\Interface` and `World of Warcraft\_retail_\WTF` folders. Just in case.
